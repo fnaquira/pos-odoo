@@ -8,5 +8,6 @@ Core mechanisms for the accounting modules. To display the menuitems, install th
     """,
     'depends' : [],
     'data': [
+		'views/series_view.xml'
     ]
 }

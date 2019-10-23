@@ -2,7 +2,8 @@
 from odoo import models, fields, api
 
 class Series(models.Model):
-    _name = 'facturacion.series'
-    _description = 'Series de documentos'
+	_name = 'facturacion.series'
+	_description = 'Series de documentos'
 
-    name = fields.Char(string='Nombre de la serie')
+	name = fields.Char(string='Nombre de la serie')
+	state = fields.Boolean(string='Estado de la serie', default=True)

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="series_tree_view" model="ir.ui.view">
+            <field name="name">series.tree.view</field>
+            <field name="model">facturacion.series</field>
+            <field name="arch" type="xml">
+				<tree string="Series">
+					<field name="name"/>
+					<field name="state"/>
+				</tree>
+            </field>
+        </record>
+		
+		<record model="ir.actions.act_window" id="facturacion.action_series">
+			<field name="name">facturacion window</field>
+			<field name="res_model">facturacion.series</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+        <menuitem name="Peru" id="menu_facturacion" sequence="450"
+			web_icon="facturacion,static/description/icon.png"/>
+
+		<menuitem name="Series" id="facturacion.menu_1_series" parent="facturacion.menu_facturacion"
+              action="facturacion.action_series"/>
+	</data>
+</odoo>
