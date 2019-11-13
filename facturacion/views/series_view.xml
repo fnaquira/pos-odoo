@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="series_tree_view" model="ir.ui.view">
-            <field name="name">series.tree.view</field>
-            <field name="model">facturacion.series</field>
-            <field name="arch" type="xml">
+	<data>
+		<record id="series_tree_view" model="ir.ui.view">
+			<field name="name">series.tree.view</field>
+			<field name="model">facturacion.series</field>
+			<field name="arch" type="xml">
 				<tree string="Series">
 					<field name="name"/>
-					<field name="state"/>
+					<field name="prefix"/>
+					<field name="active"/>
 				</tree>
-            </field>
-        </record>
-		
+			</field>
+		</record>
+
+		<record id="series_search_view" model="ir.ui.view">
+			<field name="name">series.search.view</field>
+			<field name="model">facturacion.series</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<field name="prefix"/>
+				</search>
+			</field>
+		</record>
+
+		<record id="series_form_view" model="ir.ui.view">
+			<field name="name">series.form.view</field>
+			<field name="model">facturacion.series</field>
+			<field name="arch" type="xml">
+				<form string="Editar Serie">
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+						<notebook>
+							<page string="Prefijo">
+								<field name="prefix"/>
+							</page>
+							<page string="Estado">
+								<field name="active"/>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
 		<record model="ir.actions.act_window" id="facturacion.action_series">
-			<field name="name">facturacion window</field>
+			<field name="name">Listado de Series</field>
 			<field name="res_model">facturacion.series</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-		
-        <menuitem name="Peru" id="menu_facturacion" sequence="450"
-			web_icon="facturacion,static/description/icon.png"/>
 
-		<menuitem name="Series" id="facturacion.menu_1_series" parent="facturacion.menu_facturacion"
-              action="facturacion.action_series"/>
+		<menuitem name="Peru" id="menu_facturacion" sequence="450" web_icon="facturacion,static/description/icon.png"/>
+
+		<menuitem name="Series" id="facturacion.menu_1_series" parent="facturacion.menu_facturacion" action="facturacion.action_series"/>
 	</data>
 </odoo>

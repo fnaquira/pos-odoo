@@ -6,4 +6,10 @@ class Series(models.Model):
 	_description = 'Series de documentos'
 
 	name = fields.Char(string='Nombre de la serie')
-	state = fields.Boolean(string='Estado de la serie', default=True)
+	prefix = fields.Char(string='Prefijo de la serie')
+	document_type = fields.Selection([('01','Factura'),
+		('03','Boleta'),
+		('07','Nota de Crédito'),
+		('08','Nota de Débito')
+	])
+	active = fields.Boolean(string='Estado de la serie', default=True)

@@ -2,12 +2,14 @@
 {
     'name' : 'Facturacion',
     'version' : '1.0',
-    'summary': 'Send Invoices and Track Payments',
+    'summary': 'Modulo basico para facturacion en Peru',
     'description': """
 Core mechanisms for the accounting modules. To display the menuitems, install the module account_invoicing.
     """,
-    'depends' : [],
+    'depends' : ['account'],
     'data': [
-		'views/series_view.xml'
+		  'data/series.xml',
+		  'views/series_view.xml',
+		  'views/account_invoice_view.xml',
     ]
 }

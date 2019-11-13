@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="serie1" model="facturacion.series">
+            <field name="name">Serie Boleta</field>
+            <field name="prefix">B001</field>
+            <field name="document_type">03</field>
+            <field name="active">True</field>
+        </record>
+        <record id="serie2" model="facturacion.series">
+            <field name="name">Serie Factura</field>
+            <field name="prefix">F001</field>
+            <field name="document_type">01</field>
+            <field name="active">True</field>
+        </record>
+        <record id="serie3" model="facturacion.series">
+            <field name="name">Serie Nota de Crédito</field>
+            <field name="prefix">FC01</field>
+            <field name="document_type">07</field>
+            <field name="active">True</field>
+        </record>
+        <record id="serie4" model="facturacion.series">
+            <field name="name">Serie Nota de Débito</field>
+            <field name="prefix">FD01</field>
+            <field name="document_type">08</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>
