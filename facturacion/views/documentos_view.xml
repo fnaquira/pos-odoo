@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="documentos_tree_view" model="ir.ui.view">
+            <field name="name">documentos.tree.view</field>
+            <field name="model">facturacion.documentos</field>
+            <field name="arch" type="xml">
+                <tree string="Documentos" editable="bottom">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="facturacion.action_documentos">
+            <field name="name">Listado de documentos</field>
+            <field name="res_model">facturacion.documentos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Documentos" id="facturacion.menu_1_documentos" parent="facturacion.menu_facturacion" action="facturacion.action_documentos"/>
+    </data>
+</odoo>
+

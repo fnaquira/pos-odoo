@@ -6,3 +6,4 @@ class AccountInvoice(models.Model):
 	
 	serie_id = fields.Many2one(comodel_name='facturacion.series',
 		string='Serie Electrónica')
+	tipo_doc = fields.Selection(string='Tipo de Documento',related='serie_id.document_type',readonly=True)

@@ -8,6 +8,7 @@
 			<field name="arch" type="xml">
 				<field name="date_invoice" position="after">
 					<field name="serie_id"/>
+					<field name="tipo_doc"/>
 				</field>
 			</field>
 		</record>
